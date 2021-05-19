@@ -1,18 +1,35 @@
+radio.onReceivedValueDeprecated(function (name, value) {
+    if (name == "A") {
+        arm = value
+    }
+    if (name == "R") {
+        roll = value
+    }
+    if (name == "T") {
+        throttle = value
+    }
+})
 let throttle = 0
-input.onButtonPressed(Button.A, function () {
-    throttle += 10
-    hoverbit.motor_power(list_motor.M2, throttle)
-})
-input.onButtonPressed(Button.AB, function () {
-    hoverbit.stop_all_motors()
-})
-input.onButtonPressed(Button.B, function () {
-    throttle += -10
-    hoverbit.motor_power(list_motor.M2, throttle)
+let roll = 0
+let arm = 0
+let radioGroup = 7
+radio.setGroup(radioGroup)
+basic.showNumber(radioGroup)
+if (arm) {
+    while (arm) {
+        basic.showIcon(IconNames.No)
+    }
+    basic.showIcon(IconNames.Yes)
+}
+basic.forever(function () {
+    basic.showNumber(Math.round(throttle / 10))
 })
 basic.forever(function () {
-    basic.showNumber(throttle)
-})
-basic.forever(function () {
-    hoverbit.servo_angle(input.rotation(Rotation.Roll), list_servo.S1)
+    if (arm) {
+        hoverbit.start_cushion_simple()
+        hoverbit.thrust_power_simple(throttle)
+    } else {
+        hoverbit.stop_all_motors()
+    }
+    hoverbit.direction_simple(roll)
 })

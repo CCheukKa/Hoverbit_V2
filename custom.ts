@@ -71,7 +71,7 @@ namespace hoverbit {
      *  Servo must be connected to S1.
      */
     //% blockID=hoverbit_direction_simple
-    //% block="Direction $angle"
+    //% block="Set direction $angle"
     //% angle.min=-80 angle.max=80
     //% angle.defl=0
     //% group='Beginner'
@@ -85,7 +85,7 @@ namespace hoverbit {
      * Motor must be connected to M2.
      */
     //% blockID=hoverbit_motor_power_simple
-    //% block="Thrust power $power"
+    //% block="Set forward power $power"
     //% puissance.defl=0
     //% group='Beginner'
     export function thrust_power_simple(power: number): void {
