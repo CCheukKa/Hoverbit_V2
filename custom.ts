@@ -20,6 +20,14 @@ enum list_servo {
 //\uf0e4"
 //u274A"
 
+
+/**
+ *  
+ * Extension written by Julien Launay julien.launay@laposte.net and MakeKit, henning@makekit.no
+ * For making a hovercraft with the multi:bit control board by MakeKit, www.makekit.no
+ * 
+*/ 
+
 namespace hoverbit {
  
     /**
