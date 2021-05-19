@@ -14,5 +14,5 @@ basic.forever(function () {
     basic.showNumber(throttle)
 })
 basic.forever(function () {
-    hoverbit.servo_angle(input.rotation(Rotation.Roll), list_servo.S2)
+    hoverbit.servo_angle(input.rotation(Rotation.Roll), list_servo.S1)
 })

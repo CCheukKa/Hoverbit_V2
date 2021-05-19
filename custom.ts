@@ -14,7 +14,12 @@ enum list_servo {
     S2,
 }
 //% groups=['Beginner', 'Expert']
-//% color="#037268" icon="\u274A"
+//% color="#037268" icon="\uf0e4"
+//uf11b
+//\uf0b2
+//\uf0e4"
+//u274A"
+
 namespace hoverbit {
  
     /**
