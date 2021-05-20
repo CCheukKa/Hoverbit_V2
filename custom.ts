@@ -32,14 +32,14 @@ namespace hoverbit {
  
     /**
      * Start the cushion motor.
-     * Motor will run at 50% speed.
+     * Motor will run at 35% speed.
      * Motor must be connected to port M0
      */
     //% blockID=hoverbit_start_cushion
     //% block="Start cushion"
     //% group='Beginner'
     export function start_cushion_simple(): void {
-        pins.analogWritePin(AnalogPin.P0, 50*1023/100);
+        pins.analogWritePin(AnalogPin.P0, 35*1023/100);
     }
 
     /**
@@ -86,7 +86,8 @@ namespace hoverbit {
      */
     //% blockID=hoverbit_motor_power_simple
     //% block="Set forward power $power"
-    //% puissance.defl=0
+    //% power.min=0 power.max=100
+    //% power.defl=0
     //% group='Beginner'
     export function thrust_power_simple(power: number): void {
         pins.analogWritePin(AnalogPin.P2, power*1023/100);
@@ -144,8 +145,8 @@ namespace hoverbit {
     //% blockID=hoverbit_cushion_speed
     //% block="Cushion power %power"
     //% group='Expert'
-    //% puissance.defl=10
-    //% puissance.min=0 power.max=100
+    //% power.defl=10
+    //% power.min=0 power.max=100
     //% expandableArgumentMode=toggle
     export function cushion_power(power: number): void {
         pins.analogWritePin(AnalogPin.P0, power*1023/100);
