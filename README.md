@@ -1,3 +1,4 @@
+Extension for hover:bit, the micro:bit hovercraft. Learn more at https://www.makekit.no/hoverbit and you can order from https://shop.makekit.no or a distributor.
 
 > Open this page at [https://gomakekit.github.io/hoverbit_v2/](https://gomakekit.github.io/hoverbit_v2/)
 
