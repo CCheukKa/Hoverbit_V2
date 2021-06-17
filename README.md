@@ -18,7 +18,7 @@ Use the variable arm to turn motors on and off.
 // Motor control
 if (arm) {
         hoverbit.start_cushion_simple()
-        hoverbit.thrust_power_simple(throttle)
+        hoverbit.forward_power_simple(throttle)
     } else {
         hoverbit.stop_all_motors()
     }
