@@ -34,9 +34,9 @@ basic.forever(function () {
 ```
 
 ## Choose the servo
-If you want to connect a servo to another pin.
+If you want to connect a servo to another pin (P0-P2). 
 ```
-hoverbit.servo_angle(roll, P1)
+hoverbit.servo_angle(roll, list_servo.S1)
 ```
 
 ## Manual cushion control
