@@ -34,6 +34,7 @@ basic.forever(function () {
 ```
 
 ## Choose the servo
+If you want to connect a servo to another pin.
 ```
 hoverbit.servo_angle(roll, P1)
 ```
