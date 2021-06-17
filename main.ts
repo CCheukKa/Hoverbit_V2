@@ -27,7 +27,7 @@ basic.forever(function () {
 basic.forever(function () {
     if (arm) {
         hoverbit.start_cushion_simple()
-        hoverbit.thrust_power_simple(throttle)
+        hoverbit.forward_power_simple(throttle)
     } else {
         hoverbit.stop_all_motors()
     }

@@ -56,7 +56,7 @@ namespace hoverbit {
      * Motor must be connected to port M0
      */
     //% blockID=hoverbit_start_cushion
-    //% block="Start cushion"
+    //% block="start cushion"
     //% group='Beginner'
     export function start_cushion_simple(): void {
         pins.analogWritePin(AnalogPin.P0, 35*1023/100);
@@ -67,7 +67,7 @@ namespace hoverbit {
      * The motor must be connected to port M0
      */
     //% blockID=hoverbit_stop_cushion
-    //% block="Stop cushion"
+    //% block="stop cushion"
     //% group='Beginner'
     export function stop_cushion(): void {
         pins.analogWritePin(AnalogPin.P0, 0);
@@ -79,7 +79,7 @@ namespace hoverbit {
      * Don´t use servo on the same port as controlling a motor!
      */
     //% blockID=hoverbit_stop_motors
-    //% block="Stop all motors"
+    //% block="stop all motors"
     //% group='Beginner'
     export function stop_all_motors(): void {
         pins.analogWritePin(AnalogPin.P0, 0);
@@ -91,7 +91,7 @@ namespace hoverbit {
      *  Servo must be connected to S1.
      */
     //% blockID=hoverbit_direction_simple
-    //% block="Set direction $angle"
+    //% block="set direction $angle"
     //% angle.min=-80 angle.max=80
     //% angle.defl=0
     //% group='Beginner'
@@ -105,11 +105,11 @@ namespace hoverbit {
      * Motor must be connected to M2.
      */
     //% blockID=hoverbit_motor_power_simple
-    //% block="Set forward power $power"
+    //% block="set forward power $power"
     //% power.min=0 power.max=100
     //% power.defl=0
     //% group='Beginner'
-    export function thrust_power_simple(power: number): void {
+    export function forward_power_simple(power: number): void {
         pins.analogWritePin(AnalogPin.P2, power*1023/100);
     }
 
@@ -119,7 +119,7 @@ namespace hoverbit {
      *  Don´t use servo at the same pin while controlling a motor!
      */
     //% blockID=hoverbit_motor_power
-    //% block="Motor $name_motor power $power"
+    //% block="motor $name_motor power $power"
     //% power.min=0 power.max=100
     //% power.defl=0
     //% name_motor=M0
@@ -141,7 +141,7 @@ namespace hoverbit {
      * Don´t control a motor and a servo on the same pin!
      */
     //% blockID=hoverbit_direction
-    //% block="Servo $servo_name direction $angle"
+    //% block="servo $servo_name direction $angle"
     //% angle.min=-90 angle.max=90
     //% angle.defl=0
     //% servo_name.defl=P1
@@ -163,7 +163,7 @@ namespace hoverbit {
      * The motor must be connected to port P0 (M0).
      */
     //% blockID=hoverbit_cushion_speed
-    //% block="Cushion power %power"
+    //% block="cushion power %power"
     //% group='Expert'
     //% power.defl=10
     //% power.min=0 power.max=100
