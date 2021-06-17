@@ -1,34 +1,66 @@
-Extension for hover:bit, the micro:bit hovercraft. Learn more at https://www.makekit.no/hoverbit and you can order from https://shop.makekit.no or a distributor.
+## Makecode Extension for hover:bit, the micro:bit hovercraft
+
+Hover:bit is a swift, environmental friendly diy hovercraft for micro:bit.
+Learn more at about hover:bit at https://www.makekit.no/hoverbit and you can order from https://shop.makekit.no or a distributor.
 
 Full building instructions and videos at www.makekit.no/docs
 
-> Open this page at [https://gomakekit.github.io/hoverbit_v2/](https://gomakekit.github.io/hoverbit_v2/)
+This library provides a Microsoft Makecode extension for MakeKit Hover:bit
 
-## Use as Extension
+https://www.makekit.no/hoverbit
 
-This repository can be added as an **extension** in MakeCode.
+## Control motors
+You start the cushion motor on P0 with start_cushion.
+You control the pusher power of motor M2 with a number between 0 and 100.
+Use the variable arm to turn motors on and off.
 
-* open [https://makecode.microbit.org/](https://makecode.microbit.org/)
-* click on **New Project**
-* click on **Extensions** under the gearwheel menu
-* search for **https://github.com/gomakekit/hoverbit_v2** and import
+```
+// Motor control
+if (arm) {
+        hoverbit.start_cushion_simple()
+        hoverbit.thrust_power_simple(throttle)
+    } else {
+        hoverbit.stop_all_motors()
+    }
+```
 
-## Edit this project ![Build status badge](https://github.com/gomakekit/hoverbit_v2/workflows/MakeCode/badge.svg)
+## Control the rudder
+You control the rudder with a servo on P1. Input is a number between -90 and 90.
 
-To edit this repository in MakeCode.
+```
+basic.forever(function () {
+	hoverbit.direction_simple(roll)
+})
+```
 
-* open [https://makecode.microbit.org/](https://makecode.microbit.org/)
-* click on **Import** then click on **Import URL**
-* paste **https://github.com/gomakekit/hoverbit_v2** and click import
+## Choose the servo
+```
+hoverbit.servo_angle(roll, P1)
+```
 
-## Blocks preview
+## Manual cushion control
+Set the cushion motor on P0 between 0 and 100.
 
-This image shows the blocks code from the last commit in master.
-This image may take a few minutes to refresh.
+```
+hoverbit.cushion_power(10)
+```
 
-![A rendered view of the blocks](https://github.com/gomakekit/hoverbit_v2/raw/master/.github/makecode/blocks.png)
+## Set any motor power
+Control the speed on any motor (P0-P2)
+```
+hoverbit.motor_power(list_motor.M0, 0)
+```
 
-#### Metadata (used for search, rendering)
+## Stop cushion
+Stop the cushion motor only with
+```
+hoverbit.stop_cushion_simple()
+```
+
+
+## Supported targets
 
 * for PXT/microbit
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
+
+## License
+MIT
