@@ -1,10 +1,10 @@
 enum list_motor {
     //% block="M0"
-    M2,
+    M0,
     //% block="M1"
     M1,
     //% block="M2"
-    M0
+    M2
 }
 
 enum list_servo {
