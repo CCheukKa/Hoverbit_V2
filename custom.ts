@@ -1,10 +1,10 @@
 enum list_motor {
     //% block="M0"
-    M0,
+    M2,
     //% block="M1"
     M1,
     //% block="M2"
-    M2
+    M0
 }
 
 enum list_servo {
@@ -59,7 +59,7 @@ namespace hoverbit {
     //% block="start cushion"
     //% group='Beginner'
     export function start_cushion_simple(): void {
-        pins.analogWritePin(AnalogPin.P0, 35*1023/100);
+        pins.analogWritePin(AnalogPin.P2, 35*1023/100);
     }
 
     /**
@@ -70,7 +70,7 @@ namespace hoverbit {
     //% block="stop cushion"
     //% group='Beginner'
     export function stop_cushion(): void {
-        pins.analogWritePin(AnalogPin.P0, 0);
+        pins.analogWritePin(AnalogPin.P2, 0);
     }
 
     /**
@@ -110,7 +110,7 @@ namespace hoverbit {
     //% power.defl=0
     //% group='Beginner'
     export function forward_power_simple(power: number): void {
-        pins.analogWritePin(AnalogPin.P2, power*1023/100);
+        pins.analogWritePin(AnalogPin.P0, power*1023/100);
     }
 
 
@@ -128,11 +128,11 @@ namespace hoverbit {
         let rate = power*1023/100;
         switch (name_motor) {
             case list_motor.M0:
-                pins.analogWritePin(AnalogPin.P0, rate); break;
+                pins.analogWritePin(AnalogPin.P2, rate); break;
             case list_motor.M1:
                 pins.analogWritePin(AnalogPin.P1, rate); break;
             case list_motor.M2:
-                pins.analogWritePin(AnalogPin.P2, rate); break;
+                pins.analogWritePin(AnalogPin.P0, rate); break;
         }
     }
 
@@ -152,7 +152,7 @@ namespace hoverbit {
             case list_servo.S1:
                 pins.servoWritePin(AnalogPin.P1, angle); break;
             case list_servo.S2:
-                pins.servoWritePin(AnalogPin.P2, angle); break;
+                pins.servoWritePin(AnalogPin.P0, angle); break;
         }  
     }
 
@@ -169,7 +169,7 @@ namespace hoverbit {
     //% power.min=0 power.max=100
     //% expandableArgumentMode=toggle
     export function cushion_power(power: number): void {
-        pins.analogWritePin(AnalogPin.P0, power*1023/100);
+        pins.analogWritePin(AnalogPin.P2, power*1023/100);
     }
 
 }
